@@ -1,5 +1,15 @@
 .app {
   height: 100%;
+  flex-direction: column; 
+}
+
+@media (aspect-ratio: 4/3) {
+}
+
+@media (min-aspect-ratio: 1/1) {
+  .app {
+    flex-direction: row;
+  }
 }
 
 .app textarea {

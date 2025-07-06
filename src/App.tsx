@@ -1,25 +1,12 @@
-import { useEffect, useRef } from 'react';
+import { useRef } from 'react';
 import './App.css';
 import { Div, Textarea } from './components/Components';
 import { CalculateSum, ListValues } from './scripts/scripts';
 
 export function App() {
 
-  const app = useRef<HTMLDivElement>(null);
   const input = useRef<HTMLTextAreaElement>(null);
   const output = useRef<HTMLTextAreaElement>(null);
-
-  useEffect(() => {
-    const handleResize = () => {
-      const isPortrait = window.innerHeight > window.innerWidth;
-      if(app.current) {
-        app.current.style.flexDirection = isPortrait ? 'column' : 'row';
-      }
-    };
-    window.addEventListener('resize', handleResize);
-    handleResize();
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
 
   const inputOnChange = () => {
     try {
@@ -35,7 +22,6 @@ export function App() {
   
   return (
     <Div 
-      ref={app}
       className="app">
       <Textarea 
         ref={input}
