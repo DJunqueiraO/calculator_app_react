@@ -2,7 +2,8 @@ export function ListValues(values: string): [string, string | null][] {
     function onMap(x: string): [string, string | null] {
         const parts = x.split(';');
         const first = parts[0].replace(/[\s\t]/g, ' ')
-        const second = parts.length > 1 ? parts[1].replace(/ /g, ' ') : null;
+        const second = parts.length > 1 ? parts[1].replace(/ /g, ' ') : '';
+        
         return [first, second];
     }
 

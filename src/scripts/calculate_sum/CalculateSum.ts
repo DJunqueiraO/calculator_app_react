@@ -9,7 +9,7 @@ export function CalculateSum(extract: [string, string | null][]): [number, strin
         let sentence = `${(result).toFixed(2).padStart(7)}`;
         sentence += ` + ${(valorToAdd).toFixed(2).padStart(7)}`;
         sentence += ` ; = ${(currentResult).toFixed(2).padStart(7)}`;
-        sentence += ` -> *${a} ;${b}*`;
+        sentence += ` -> *${a} ;${b || ''}*`;
 
         extracted += sentence + '\n';
         result = currentResult;

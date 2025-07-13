@@ -12,9 +12,6 @@ export function App() {
     try {
       if(output.current && input.current) {
         const listValues = ListValues(input.current.value)
-
-        console.log(CalculateSum(listValues));
-        
         output.current.value = `${CalculateSum(listValues)[1]}\n\nTotal: ${CalculateSum(listValues)[0].toFixed(2)}`;
       }
     } catch (error) {

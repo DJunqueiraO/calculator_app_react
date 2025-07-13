@@ -6,9 +6,18 @@
 @media (aspect-ratio: 4/3) {
 }
 
+@media (max-aspect-ratio: 1/1) {
+  .app .textarea:first-child {
+    height: 40%;
+  }
+}
+
 @media (min-aspect-ratio: 1/1) {
   .app {
     flex-direction: row;
+  }
+  .app .textarea:first-child {
+    width: 40%;
   }
 }
 
