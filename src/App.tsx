@@ -11,7 +11,11 @@ export function App() {
   const inputOnChange = () => {
     try {
       if(output.current && input.current) {
-        output.current.value = `Dívida total: ${CalculateSum(ListValues(input.current.value)).toFixed(2)}`;
+        const listValues = ListValues(input.current.value)
+
+        console.log(CalculateSum(listValues));
+        
+        output.current.value = `${CalculateSum(listValues)[1]}\n\nTotal: ${CalculateSum(listValues)[0].toFixed(2)}`;
       }
     } catch (error) {
       if(output.current) {
